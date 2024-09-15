@@ -17,7 +17,7 @@ Son de mas alto nivel (mas que los patrones de diseno).
 * Decisiones significativas en el diseno.
 * Comunicacion entre componentes
 
-![](Ingenieria%20de%20Software%20I/Attachments/Pasted%20image%2020240915111849.png)
+![](Attachments/Pasted%20image%2020240915111849.png)
 
 
 Inicialmente la low internal quality tiene una pendiente mas pronunciada que la azul. A través del tiempo la linea entrega mas funcionalidad en menor tiempo.
