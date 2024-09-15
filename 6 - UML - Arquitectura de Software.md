@@ -3,7 +3,7 @@
 
 UML es un lenguaje o forma de representar visualmente la arquitectura y diseno de sistemas de softwares complejos
 
-![[Pasted image 20240909193209.png]]
+![](Attachments/Pasted%20image%2020240909193209.png)
 
 Agregacion vs Composicion
 
@@ -12,19 +12,19 @@ Tipos de diagramas estructurales
 * Diagrama de paquetes -> como agrupar las clases en distintos paquetes, invoulucra acoplamiento
 * Diagrama de objetos -> representación de instancias de objectos en determinado estado
 * Diagrama de componentes -> componente = empaqueta un conjunto de clases  (archivos .jar en java)
-*![[Pasted image 20240909194336.png]]
+*![](Attachments/Pasted%20image%2020240909194336.png)
 * Diagrama de despliegue -> mostrar nodos fisicos que representan computadoras, telefonos (hardware). "Como despliego componentes en estos nodos"
-*![[Pasted image 20240909194459.png]]
+*![](Attachments/Pasted%20image%2020240909194459.png)
 
 
 Diagramas de comportamiento
 * Diagrama de actividades -> documenta el flujo o procedimiento de una actividad
-*![[Pasted image 20240909194648.png]]
+*![](Attachments/Pasted%20image%2020240909194648.png)
 * Diagrama de secuencias
 * Diagrama de casos de uso
-*![[Pasted image 20240909194734.png]]
+*![](Attachments/Pasted%20image%2020240909194734.png)
 * Diagrama de estados 
-*![[Pasted image 20240909194804.png]]
+*![](Attachments/Pasted%20image%2020240909194804.png)
 
 
 
@@ -38,7 +38,7 @@ La arquitectura de software representa la estructura o las estructuras del siste
 
 Que debemos tener en cuenta cuando escribimos un documento, informe o queremos transmitir información? -> Hay que tener en cuenta a quien le queremos trasmitir lo que vayamos a contar. Eso es lo principal, saber a quien va dirigido.
 
-![[Pasted image 20240909195905.png]]
+![](Attachments/Pasted%20image%2020240909195905.png)
 
 Muchos participantes y distintos intereses.
 
@@ -107,7 +107,7 @@ Sirve a dos propósitos principales:
 
 > En base a los escenarios se empieza a plantear la arquitectura.
 
-![[Pasted image 20240909202039.png]]
+![](Attachments/Pasted%20image%2020240909202039.png)
 
 
 ### Conclusiones
@@ -136,7 +136,7 @@ Por ejemplo, para el envío de emails se usa un SMTP y realiza el envío program
 ---
 
 
-![[Pasted image 20240909215646.png]]
+![](Attachments/Pasted%20image%2020240909215646.png)
 
 
 

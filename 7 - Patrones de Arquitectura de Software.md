@@ -30,7 +30,7 @@ Siempre es mejor tener un sistema mejor estructurado, aunque en un principio sea
 
 Propone estructurar el sistema en un conjunto de capas se comunica entre si. Que ese conjunto de capas tenga un diseno bien definido y se comunquen entre ellos a traves de sus interfaces.
 
-![[Pasted image 20240912192920.png]]
+![](Attachments/Pasted%20image%2020240912192920.png)
 
 > La misma idea se aplica en distintos contextos.
 
@@ -50,7 +50,7 @@ Disminuye el acoplamiento.\
 
 El patrón **Broker** es un intermediario que facilita la comunicación entre clientes y servidores, ocultando los detalles de la red y la ubicación de los servicios. El cliente no interactúa directamente con el servidor, sino que envía sus solicitudes al **Broker**, que se encarga de enrutar la solicitud al servidor adecuado y devolver la respuesta al cliente.
 
-![[Pasted image 20240912200113.png]]
+![](Attachments/Pasted%20image%2020240912200113.png)
 
 
 **Ejemplos y Aplicaciones:**
@@ -65,7 +65,7 @@ Armar una cadena de eslabones que se comunican entre si para resolver una determ
 
 El patrón **Pipe and Filters** organiza el procesamiento de datos como una secuencia de pasos, donde cada paso (filtro) transforma los datos y los pasa al siguiente (tubería o pipe). Es un enfoque modular que facilita la re utilización de componentes y la integración de nuevas funcionalidades sin alterar la lógica existente.
 
-![[Pasted image 20240912200718.png]]
+![](Attachments/Pasted%20image%2020240912200718.png)
 
 **Ejemplos y Aplicaciones:**
 
@@ -89,7 +89,7 @@ La UI es una forma de adaptar mi aplicacion a una cierta interfaz grafica.
 
 La **Arquitectura Hexagonal**, también conocida como **Arquitectura de Puertos y Adaptadores**, es un enfoque de diseño que busca aislar el núcleo de la aplicación de sus dependencias externas (bases de datos, interfaces de usuario, servicios web, etc.), creando una separación clara entre la lógica de negocio y la infraestructura.
 
-![[Pasted image 20240912201733.png]]
+![](Attachments/Pasted%20image%2020240912201733.png)
 
 Core -> dominio, lógica de negocio
 Application -> casos de uso 
@@ -110,7 +110,7 @@ Entonces se definió que lo importante sea lo del centro, el dominio.
 3. **Pruebas Aisladas**: Al desacoplar el núcleo de la aplicación de los detalles externos, es fácil probar la lógica de negocio de forma aislada, sin preocuparse por la infraestructura subyacente (como bases de datos o APIs externas).
 
 
-![[Pasted image 20240912202405.png]]
+![](Attachments/Pasted%20image%2020240912202405.png)
 
 - **Independencia del Entorno**: La lógica central de la aplicación no depende de frameworks, bases de datos ni interfaces. Esto facilita cambios en la infraestructura sin afectar el núcleo del sistema.
   
@@ -121,30 +121,30 @@ Entonces se definió que lo importante sea lo del centro, el dominio.
 Casos de uso -> una logica asociada a las tareas para resolver un problema? Interacciones donde participan varias entidades del dominio. Esas interacciones representan una operacion de mi dominio.
 
 
-![[Pasted image 20240912203039.png]]
+![](Attachments/Pasted%20image%2020240912203039.png)
 
 Cada caso de uso en una clase en OOP. Si es un paradigma funcional, los casos de usos son las funciones.
 
-![[Pasted image 20240912203248.png]]
+![](Attachments/Pasted%20image%2020240912203248.png)
 
 
 Misma implementacion pero de forma distinta
 
-![[Pasted image 20240912203415.png]]
+![](Attachments/Pasted%20image%2020240912203415.png)
 
 Testing??? Esta acoplado a HTTP 
 Me debo abstraer. Crear una abstraccion.
 
-![[Pasted image 20240912203554.png]]
+![](Attachments/Pasted%20image%2020240912203554.png)
 
 
 Quiero sacar la linea `const repository = new UserRepository();`
 Aplico el principio de inversion de dependencias.
 
-![[Pasted image 20240912203747.png]]
+![](Attachments/Pasted%20image%2020240912203747.png)
 
 
-![[Pasted image 20240912203908.png]]
+![](Attachments/Pasted%20image%2020240912203908.png)
 
 
 

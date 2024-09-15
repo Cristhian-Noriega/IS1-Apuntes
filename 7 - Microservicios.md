@@ -1,5 +1,5 @@
 
-![[Pasted image 20240912205402.png]]
+![](Attachments/Pasted%20image%2020240912205402.png)
 
 Partir de cosas mas chicas.
 Ventajas: 
@@ -20,5 +20,5 @@ API Gateway -> controla el acceso. Punto de patida. Conoce donde estan todos los
 
 Misma idea a microservices pero orientado al frontend. Parto una capa de presnetacion y la parto en slices.
 
-![[Pasted image 20240912210502.png]]
+![](Attachments/Pasted%20image%2020240912210502.png)
 

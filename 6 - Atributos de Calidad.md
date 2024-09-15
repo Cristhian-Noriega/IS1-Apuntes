@@ -5,7 +5,7 @@ No tiene que ver en su totalidad con la lógica de negocio, sino mas relacionado
 
 Un atributo de calidad es una medida o propiedad testeable de un sistema que es usada para indicar cómo el sistema satisface las necesidades de sus stakeholders
 
-![[Pasted image 20240909204448.png]]
+![](Attachments/Pasted%20image%2020240909204448.png)
 
 Que el tiempo de respuesta dure como maximo x segundos. 
 Que soporte x cantidad de usuarios en simultaneo. 
@@ -29,7 +29,7 @@ Que soporte x cantidad de usuarios en simultaneo.
 
 ### Rediseñamiento de los sistemas
 
-![[Pasted image 20240909204930.png]]
+![](Attachments/Pasted%20image%2020240909204930.png)
 
 
 Las consideraciones de calidad se desprenden de las necesidades del negocio y deben jugar un rol fundamental durante el ciclo de vida del desarrollo de software. No todo es funcionalidad en un sistema.
