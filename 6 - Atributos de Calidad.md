@@ -132,3 +132,4 @@ Entre los indicadores claves para medir la escalabilidad se encuentran:
 Software Architecture in Practice (3rd Edition) by Len Bass (Author), Paul Clements (Author), Rick Kazman (Author)
 
 
+
