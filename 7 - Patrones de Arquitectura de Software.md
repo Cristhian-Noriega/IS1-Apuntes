@@ -28,19 +28,19 @@ Siempre es mejor tener un sistema mejor estructurado, aunque en un principio sea
 
 ### Layers
 
-Propone estructurar el sistema en un conjunto de capas se comunica entre si. Que ese conjunto de capas tenga un diseno bien definido y se comunquen entre ellos a traves de sus interfaces.
+Propone estructurar el sistema en un conjunto de capas que se comunica entre si. Que ese conjunto de capas tenga un diseño bien definido y se comuniquen entre ellos a través de sus interfaces.
 
 ![](Attachments/Pasted%20image%2020240912192920.png)
 
 > La misma idea se aplica en distintos contextos.
 
-* User Interface -> Interaccion con el usuario. 
+* User Interface -> Interacción con el usuario. 
 * Business logic -> incumbencias del modelo de negocios
 * Data access -> esconde donde están guardados los datos. Si veo que hay, veo archivos que tengan código de acceder a una base de datos relacional. Una capa antes de la base de datos. 
 
 Cada capa tiene una responsabilidad, separación de incumbencias.
 
-Dominio -> area en el que se mueve el problema. Todos los conceptos que estan entorno al problema que quiero resolver. 
+Dominio -> area en el que se mueve el problema. Todos los conceptos que están entorno al problema que quiero resolver. 
 
 
 ### Broker
