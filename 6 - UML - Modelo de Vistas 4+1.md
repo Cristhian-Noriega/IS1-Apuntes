@@ -48,7 +48,11 @@ Separar en distintas vistas las distintas decisiones que se fueron tomando en el
 
 #### Vista Lógica
 
-La vista lógica apoya principalmente los requisitos funcionales –lo que el sistema debe brindar en términos de servicios a sus usuarios. Aquí se aplican los principios de abstracción, encapsulamiento y herencia. Esta descomposición no sólo se hace para potenciar el análisis funcional, sino también sirve para identificar mecanismos y elementos de diseño comunes a diversas partes del sistema
+La vista lógica apoya principalmente los requisitos funcionales lo que el sistema debe brindar en términos de servicios a sus usuarios. 
+
+Aquí se aplican los principios de abstracción, encapsulamiento y herencia. 
+
+Esta descomposición no sólo se hace para potenciar el análisis funcional, sino también sirve para identificar mecanismos y elementos de diseño comunes a diversas partes del sistema
 
 Acá irían diagramas de secuencias, de clases, etc. Todo lo lógico.
 
@@ -61,7 +65,9 @@ La vista de procesos toma en cuenta algunos requisitos no funcionales tales como
 
 Se enfoca en asuntos de concurrencia y distribución, integridad del sistema, de tolerancia a fallas. 
 
-Un proceso es una agrupación de tareas que forman una unidad ejecutable. Los procesos representan el nivel al que la arquit Data manipulation Dataectura de procesos puede ser controlada tácticamente (i.e., comenzar, recuperar, reconfigurar, y detener). Además, los procesos pueden replicarse para aumentar la distribución de la carga de procesamiento, o para mejorar la disponibilidad.
+Un proceso es una agrupación de tareas que forman una unidad ejecutable. Los procesos representan el nivel al que la arquitectura de procesos puede ser controlada tácticamente (i.e., comenzar, recuperar, reconfigurar, y detener). 
+
+Además, los procesos pueden replicarse para aumentar la distribución de la carga de procesamiento, o para mejorar la disponibilidad.
 
 > Sirve para ver cuantos procesos necesito para el modelo
 
@@ -76,6 +82,12 @@ La vista de desarrollo tiene en cuenta los requisitos internos relativos a la fa
 
 > Todos esas clases las empaqueto en distintos .exe o .jar ? Como los empaqueto físicamente? O varias capas lógicas en distintos paquetes físicos ? 
 
+
+En un proyecto web, la vista de desarrollo podría mostrar componentes como:
+
+- Controladores (responsables de manejar las solicitudes HTTP).
+- Repositorios (que manejan el acceso a la base de datos).
+- Servicios (que implementan la lógica de negocio).
 
 #### Vista Física (o de Despliegue)
 
@@ -133,12 +145,23 @@ Por ejemplo, para el envío de emails se usa un SMTP y realiza el envío program
 * Decision
 * Consecuencias
 
+
+### Ejemplo
+
+![](Attachments/Pasted%20image%2020240928122845.png)
+
+
 ---
+
+### Ejercicio en clase
+
+
+![](Attachments/Pasted%20image%2020240928123706.png)
 
 
 ![](Attachments/Pasted%20image%2020240909215646.png)
 
-
+![](Attachments/Pasted%20image%2020240928135932.png)
 
 ---
 

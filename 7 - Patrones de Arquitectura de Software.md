@@ -28,15 +28,15 @@ Siempre es mejor tener un sistema mejor estructurado, aunque en un principio sea
 
 ### Layers
 
-Propone estructurar el sistema en un conjunto de capas que se comunica entre si. Que ese conjunto de capas tenga un diseño bien definido y se comuniquen entre ellos a través de sus interfaces.
+Propone estructurar el sistema en un conjunto de capas que se comunica entre si. Que ese conjunto de capas tenga un diseño bien definido y se comuniquen entre ellos a través de sus interfaces, y de forma lineal. Una capa se comunica con la siguiente.
 
 ![](Attachments/Pasted%20image%2020240912192920.png)
 
-> La misma idea se aplica en distintos contextos.
+> Lección importante: La misma idea se aplica en distintos contextos.
 
 * User Interface -> Interacción con el usuario. 
 * Business logic -> incumbencias del modelo de negocios
-* Data access -> esconde donde están guardados los datos. Si veo que hay, veo archivos que tengan código de acceder a una base de datos relacional. Una capa antes de la base de datos. 
+* Data access -> esconde donde están guardados los datos. Si veo que hay, veo archivos que tengan código de acceder a una base de datos relacional. Una capa antes de la base de datos. Abstracciones que tienen que ver con el acceso a datos.
 
 Cada capa tiene una responsabilidad, separación de incumbencias.
 
@@ -92,8 +92,10 @@ La **Arquitectura Hexagonal**, también conocida como **Arquitectura de Puertos 
 ![](Attachments/Pasted%20image%2020240912201733.png)
 
 Core -> dominio, lógica de negocio
-Application -> casos de uso 
+Application -> casos de uso
 Infraestructure -> todo el resto
+
+La dependency rule indica que siempre se va de afuera hacia adentro. No al revés. 
 
 Es parecido al de Layers (capas). Pero el data access y user interface también es infraestructura.
 
@@ -112,16 +114,57 @@ Entonces se definió que lo importante sea lo del centro, el dominio.
 
 ![](Attachments/Pasted%20image%2020240912202405.png)
 
+> La regla del dominio es que todo depende del dominio, el dominio no depende de nada, el dominio no puede cambiar y no puede ser afectado por capas superiores.
+
+
+
+
 - **Independencia del Entorno**: La lógica central de la aplicación no depende de frameworks, bases de datos ni interfaces. Esto facilita cambios en la infraestructura sin afectar el núcleo del sistema.
   
 - **Adaptadores**: Los detalles de la infraestructura (bases de datos, APIs externas, interfaces gráficas) interactúan con el núcleo de la aplicación a través de adaptadores. Estos adaptadores traducen las solicitudes externas a un formato comprensible por el núcleo.
   
 - **Puertos**: El núcleo de la aplicación define interfaces (puertos) que representan los puntos de interacción con el mundo externo. Los adaptadores implementan estas interfaces para conectar con tecnologías específicas.                                                            Es una interfaz que vive en la capa de application. La implementacion de esa interfaz vive en la infraestructura. 
 
-Casos de uso -> una logica asociada a las tareas para resolver un problema? Interacciones donde participan varias entidades del dominio. Esas interacciones representan una operacion de mi dominio.
+**PORT** -> interfaz que vive en la capa de aplicacion
+**ADAPTER** -> implementacion de la interfaz del port, que vive en la infraestructura
+
+
+En la **Application Layer** están los Casos de uso -> una lógica asociada asociada a resolver un problema en particular de la aplicacion.
+
+ Ejemplo: Crear un Producto, buscar un Producto, firmar un Documento. 
+
+Interacciones donde participan varias entidades del dominio. Esas interacciones representan una operación de mi dominio que resuelve mi sistema.
+
+![](Attachments/Pasted%20image%2020240928152001.png)
+
+**Diagrama UML de casos de uso**:
+
+![](Attachments/Pasted%20image%2020240928152321.png)
+
+
+En la **Infrastructure Layer** están los adaptadores de los ports. 
 
 
 ![](Attachments/Pasted%20image%2020240912203039.png)
+
+La infrastructure layer se caracteriza por: 
+
+1. Es la capa más externa de la arquitectura.
+2. Contiene todos los detalles técnicos y específicos de la implementación.
+3. Se encarga de la comunicación con elementos externos como bases de datos, interfaces de usuario, servicios web, etc.
+4. Utiliza adaptadores para conectar estos componentes externos con la lógica de negocio central.
+5. Implementa las interfaces definidas por la capa de dominio, permitiendo que los detalles técnicos se mantengan separados de la lógica de negocio.
+6. Proporciona flexibilidad para cambiar o actualizar componentes tecnológicos sin afectar el núcleo de la aplicación.
+7. Incluye elementos como frameworks, bibliotecas externas, configuraciones y código de infraestructura.
+
+Esta capa permite que la aplicación se comunique con el mundo exterior mientras mantiene el dominio de negocio aislado y protegido de los detalles de implementación
+
+
+
+---
+
+
+
 
 Cada caso de uso en una clase en OOP. Si es un paradigma funcional, los casos de usos son las funciones.
 
@@ -135,18 +178,73 @@ Misma implementacion pero de forma distinta
 Testing??? Esta acoplado a HTTP 
 Me debo abstraer. Crear una abstraccion.
 
+### Repository Pattern
+
+Es una abstraccion de donde guardar datos
+
 ![](Attachments/Pasted%20image%2020240912203554.png)
 
+Ahora el caso de uso (`createUser`) instancio el repositorio y llamo al repositorio para guardar. Ahora el caso de uso ya no sabe como se guardan las cosas. 
 
-Quiero sacar la linea `const repository = new UserRepository();`
-Aplico el principio de inversion de dependencias.
+Quiero sacar la linea `const repository = new UserRepository();` ya que quiero que el caso de uso no sepa que implementacion concreta de repository este usando.
+
+Puedo componer el `createUser` con el `repository`. Que reciba por parametro.
+
+-> Aplico el principio de inversion de dependencias.
 
 ![](Attachments/Pasted%20image%2020240912203747.png)
+
+`CreateUser` depende de `fetch` y `database`. Hay una abstraccion con `UseRepository` pero quiero invertir la dependencia.
+
+![](Attachments/Pasted%20image%2020240928200937.png)
+
+`UserAPIRepository` y `UserDBRepository` implementan la interfaz de `UserRepository`.
+A esas dos implementaciones concretas las debo meter como parametro al `CreateUser`.
+
+
+![](Attachments/Pasted%20image%2020240928201233.png)
+
+
+![](Attachments/Pasted%20image%2020240928201328.png)
+
+
+Todavía hay que resolver el problema de sacar el `new` -> Usamos Dependency Injection
+
+> Dependency Injection is a software design technique in which the creation and binding of dependencies are done outside of the dependent class.
+
 
 
 ![](Attachments/Pasted%20image%2020240912203908.png)
 
+![](Attachments/Pasted%20image%2020240928201647.png)
 
+Puedo llamar a `createUser` con distintos repositories. Encapsula lo que varia que es el repositorio que quiero usar.
+
+Por lo tanto la idea es ...
+
+> Tener casos de uso que dependan de abstracciones (PORTS), tener implementaciones de esas abstracciones (ADAPTERS) que viven en la infraestructura para cada caso (acceder a la base, llamar a una API, etc) y en algún momento inyectar esas dependencias.
+> El momento de hacer esa inyeccion es cuando arranca el sistema. 
+
+
+---
+
+### Workflow
+
+![](Attachments/Pasted%20image%2020240928202932.png)
+
+* Capa de infraestructura -> Adapters
+* Capa de aplicacion -> Casos de uso y dominio
+* Capa de dominio -> Ports (interfaces de los adapters) y Entities
+
+Cuando arranca el sistema, se inyecta las implementaciones concretas de las abstracciones. Los adapters se inyectan adentro de los ports. 
+
+--- 
+
+### Folder structure
+
+![](Attachments/Pasted%20image%2020240928203439.png)
+
+> El de la derecha es todo infraestructura. La UI.
 
 
 
